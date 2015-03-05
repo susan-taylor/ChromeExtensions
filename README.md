@@ -1,2 +1,2 @@
 # College
-Programs I have made in my Java and C classes in school.
+Programs I have made in my very first Java class through to my current C classes in school.
