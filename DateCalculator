@@ -1,0 +1,253 @@
+/**
+ * An application that prompts for and reads two dates consisting
+ * of a month and a year and displays the number of years and months
+ * between these two dates. Either date could be the earlier date.
+ * The program is to prompt the user for the input as shown below.
+ *
+ * Sample Run:
+ * For the first date,
+ * Enter month: August
+ * Enter year: 2011
+ *
+ * For the second date,
+ * Enter month: March
+ * Enter year: 1999
+ *
+ * These dates are 12 years and 5 months apart.
+ *
+ *
+ * @author Susan Taylor
+ * @version 1.0
+ */
+
+import java.util.Scanner;
+
+public class DateCalculator
+{
+	/**
+	 * An application that prompts for and reads two dates consisting
+	 * of a month and a year and displays the number of years and months
+ 	 * between these two dates. Either date could be the earlier date.
+	 *
+	 * Inputs:
+	 * 	Read first month entered via keyboard
+	 *	Read first year  entered via keyboard
+	 *	Read second month entered via keyboard
+	 *	Read second year entered via keyboard
+	 *
+	 * Processing:
+	 *	Assign integer value for month difference calculation as follows:
+	 *	  1 for January, 2 for February ... 12 for December
+	 *	Repeat above value assignment for second month variables:
+	 *	  1 for January, 2 for February ... 12 for December
+	 *	If year 1 is equal to year 2, execute, else skip
+	 *	If year 1 is equal to year 2, the year difference is 0
+	 *	If year 1 is equal to year 2, month difference is absolute value of month 1 minus month 2
+	 *	If year 1 is greater than year 2, execute if met, else skip
+	 *	If year 1 is greater than year 2, calculate the year difference: year 1 minus year 2
+	 *	If year 1 is greater than year 2 and month 1 is equal to month 2, the month difference is 0
+	 *	If year 1 is greater than year 2, and month 1 is greater than month 2, the month difference is month 1 minus month 2
+	 *	If year 1 is greater than year 2, and month 1 is less than month 2, do the following:
+	 *	  Regroup 1 year into 12 months by deducting 1 from the year difference and add 12 to the month difference
+	 *	  Month difference is month 1 minus month 2
+	 *  If year 1 is less than year 2, execute if met, else skip
+	 *	If year 1 is less than year 2, calculate the year difference: year 2 minus year 1
+	 *	If year 1 is less than year 2 and month 1 is equal to month 2, the month difference is 0
+	 *	If year 1 is less than year 2, and month 1 is greater than month 2, do the following:
+	 *	  Regroup 1 year into 12 months by deducting 1 from the year difference and add 12 to the month difference
+	 *	  Month difference is month 2 minus month 1
+	 *	If year 1 is less than year 2, and month 1 is less than month 2, month difference is month 2 minus month 1
+	 *
+	 * Outputs:
+	 *	Display difference in years on standard output device.
+	 *	Display difference in months on standard output device.
+     */
+	public static void main(String[] args)
+	{
+		String firstMonth, secondMonth;
+		int firstYear, secondYear;
+		int firstMonthNumber, secondMonthNumber;
+		int yearDifference, monthDifference;
+
+		Scanner input = new Scanner(System.in);
+
+		//Read first month entered via keyboard
+		System.out.print("For the first date,\nEnter month: ");
+		firstMonth = input.next();
+
+		//Read first year entered via keyboard
+		System.out.print("Enter year: ");
+		firstYear = input.nextInt();
+
+		//Read second month entered via keyboard
+		System.out.println();
+		System.out.print("For the second date,\nEnter month: ");
+		secondMonth = input.next();
+
+		//Read second year entered via keyboard
+		System.out.print("Enter year: ");
+		secondYear = input.nextInt();
+
+		//Assign integer value to months of the year (1-12) for use in calculating difference in months
+		if (firstMonth.equalsIgnoreCase("January"))
+		{
+			firstMonthNumber = 1;
+		}
+		else if (firstMonth.equalsIgnoreCase("February"))
+		{
+			firstMonthNumber = 2;
+		}
+		else if (firstMonth.equalsIgnoreCase("March"))
+		{
+			firstMonthNumber = 3;
+		}
+		else if (firstMonth.equalsIgnoreCase("April"))
+		{
+			firstMonthNumber = 4;
+		}
+		else if (firstMonth.equalsIgnoreCase("May"))
+		{
+			firstMonthNumber = 5;
+		}
+		else if (firstMonth.equalsIgnoreCase("June"))
+		{
+			firstMonthNumber = 6;
+		}
+		else if (firstMonth.equalsIgnoreCase("July"))
+		{
+			firstMonthNumber = 7;
+		}
+		else if (firstMonth.equalsIgnoreCase("August"))
+		{
+			firstMonthNumber = 8;
+		}
+		else if (firstMonth.equalsIgnoreCase("September"))
+		{
+			firstMonthNumber = 9;
+		}
+		else if (firstMonth.equalsIgnoreCase("October"))
+		{
+			firstMonthNumber = 10;
+		}
+		else if (firstMonth.equalsIgnoreCase("November"))
+		{
+			firstMonthNumber = 11;
+		}
+		else
+		{
+			firstMonthNumber = 12;
+		}
+
+		//Assign integer value to months of the year (1-12) for use in calculating difference in months
+		if (secondMonth.equalsIgnoreCase("January"))
+		{
+			secondMonthNumber = 1;
+		}
+		else if (secondMonth.equalsIgnoreCase("February"))
+		{
+			secondMonthNumber = 2;
+		}
+		else if (secondMonth.equalsIgnoreCase("March"))
+		{
+			secondMonthNumber = 3;
+		}
+		else if (secondMonth.equalsIgnoreCase("April"))
+		{
+			secondMonthNumber = 4;
+		}
+		else if (secondMonth.equalsIgnoreCase("May"))
+		{
+			secondMonthNumber = 5;
+		}
+		else if (secondMonth.equalsIgnoreCase("June"))
+		{
+			secondMonthNumber = 6;
+		}
+		else if (secondMonth.equalsIgnoreCase("July"))
+		{
+			secondMonthNumber = 7;
+		}
+		else if (secondMonth.equalsIgnoreCase("August"))
+		{
+			secondMonthNumber = 8;
+		}
+		else if (secondMonth.equalsIgnoreCase("September"))
+		{
+			secondMonthNumber = 9;
+		}
+		else if (secondMonth.equalsIgnoreCase("October"))
+		{
+			secondMonthNumber = 10;
+		}
+		else if (secondMonth.equalsIgnoreCase("November"))
+		{
+			secondMonthNumber = 11;
+		}
+		else
+		{
+			secondMonthNumber = 12;
+		}
+
+		//Check if condition firstYear value is equal to secondYear value, execute if met, else skip.
+		if (firstYear == secondYear)
+		{
+			yearDifference = 0;
+
+			monthDifference = Math.abs(firstMonthNumber - secondMonthNumber); //absolute value
+		}
+
+		//Check if condition firstYear value is greater than secondYear value, execute if met, else skip
+		else if(firstYear > secondYear)
+		{
+			yearDifference = firstYear - secondYear;
+
+			//Execute if the first month value is equal to the second month value, execute if met, else skip
+			if (firstMonthNumber == secondMonthNumber)
+			{
+				monthDifference = 0;
+			}
+			//Execute if the first month value is greater than the second month value, execute if met, else skip
+			else if(firstMonthNumber > secondMonthNumber)
+			{
+				monthDifference = firstMonthNumber - secondMonthNumber;
+			}
+			//Execute if the first month value is lesser than the second month value, execute if met
+			else
+			{
+				yearDifference = yearDifference - 1;
+
+				monthDifference = (firstMonthNumber - secondMonthNumber) + 12;
+			}
+		}
+
+		//Check if condition firstYear value is lesser than secondYear value, execute if met
+		else
+		{
+			yearDifference = secondYear - firstYear;
+
+			//Execute if the first month value is equal to the second month value, execute if met, else skip
+			if (secondMonthNumber == firstMonthNumber)
+			{
+				monthDifference = 0;
+			}
+			//Execute if the first month value is greater than the second month value, execute if met, else skip
+			else if(firstMonthNumber > secondMonthNumber)
+			{
+				yearDifference = yearDifference - 1;
+
+				monthDifference = (secondMonthNumber - firstMonthNumber) + 12;
+			}
+			//Execute if the first month value is lesser than the second month value, execute if met
+			else
+			{
+				monthDifference = secondMonthNumber - firstMonthNumber;
+			}
+		}
+
+		//Display difference in years on standard output device.
+	 	//Display difference in months on standard output device.
+		System.out.println();
+		System.out.println("These dates are " + yearDifference + " years and " + monthDifference + " months apart.");
+
+	}
+}
